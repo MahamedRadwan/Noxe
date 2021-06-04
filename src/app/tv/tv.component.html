@@ -1,0 +1,46 @@
+<div class="dropdown float-right mx-4">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Trending
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item movie" (click)='getAllShows("top_rated")'>Toprated</a>
+        <a class="dropdown-item movie" (click)='getAllShows("popular")'>popular</a>
+        <a class="dropdown-item movie" (click)='getAllShows("latest")'>latest</a>
+        <a class="dropdown-item movie" (click)='getAllShows("on_the_air")'>onTheair</a>
+
+
+    </div>
+
+</div>
+
+<div class="clr"></div>
+
+<div class="container">
+    <div class="row my-2">
+        <div class="col-md-4">
+    
+    
+            <div class="brdr w-25 my-3"></div>
+            <h2>Trending <br>
+                Tv Shows <br>
+                to Watch Now
+            </h2>
+    
+            <div class="brdr w-100 my-3"></div>
+    
+        </div>
+    
+    
+    
+        <div *ngFor="let tv of trendingTv" class="col-md-4 ">
+            <div [routerLink]="['/tvDetails' , tv.media_type , tv.id ]"  class="movie position-relative my-2">
+                <img [src]="imgPrefix+tv.poster_path" class="img-fluid" alt="">
+                <h3 class="h6 my-2">{{tv.title}}{{tv.name}}</h3>
+    
+                <div class="vote">{{tv.vote_average}}</div>
+            </div>
+        </div>
+    
+    </div>
+</div>

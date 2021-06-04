@@ -1,0 +1,21 @@
+<i (click)="backClicked()" class="fas fa-arrow-circle-left movie h1"></i>
+<div class="container">
+    <div class="row">
+    
+
+        <div class="col-md-4">
+    
+            <img class="img-fluid" [src]="imgPrefix+peopleDetails?.profile_path">
+        </div>
+    
+        <div class="col-md-8">
+    
+            <h2 class="my-2">{{peopleDetails?.name}}</h2>
+            <span class="bg-info p-1 rounded mx-2">{{peopleDetails?.known_for_department}}</span>
+            <p class="my-2 lead secondFontColor">{{peopleDetails?.overview}}</p>
+            <p class="my-2 secondFontColor">{{peopleDetails?.biography}}</p>
+            
+    
+        </div>
+    </div>
+</div>

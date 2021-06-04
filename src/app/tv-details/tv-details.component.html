@@ -1,0 +1,25 @@
+<i (click)="backClicked()" class="fas fa-arrow-circle-left h1 movie"></i>
+<div class="container">
+    <div class="row">
+    
+
+        <div class="col-md-4">
+    
+            <img class="img-fluid" [src]="imgPrefix+tvDetails?.poster_path">
+        </div>
+    
+        <div class="col-md-8">
+    
+            <h2 class="my-2">{{tvDetails?.title}}{{tvDetails?.name}}</h2>
+            <p class="my-2 secondFontColor">{{tvDetails?.tagline}}</p>
+    
+    
+            <span class="bg-info p-1 rounded mx-2" *ngFor="let gen of tvDetails?.genres">{{gen.name}}</span>
+            <span class="bg-info p-1 rounded mx-2">Number of Seasosn : {{tvDetails?.number_of_seasons}}</span>
+
+    
+            <p class="my-2 lead secondFontColor">{{tvDetails?.overview}}</p>
+    
+        </div>
+    </div>
+</div>

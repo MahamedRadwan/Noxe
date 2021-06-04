@@ -1,0 +1,50 @@
+<div class="dropdown float-right mx-4">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Trending
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item movie"  (click)='getAllMovies("upcoming")'>Upcoming</a>
+        <a class="dropdown-item movie" (click)='getAllMovies("top_rated")'>Toprated</a>
+        <a class="dropdown-item movie" (click)='getAllMovies("popular")'>popular</a>
+    </div>
+
+</div>
+
+<div class="clr"></div>
+
+<div class="container">
+
+
+    <div class="row my-2">
+        <div class="col-md-4">
+
+
+            <div class="brdr w-25 my-3"></div>
+            <h2>Trending <br>
+                Movies <br>
+                to Watch Now
+            </h2>
+
+            <div class="brdr w-100 my-3"></div>
+
+        </div>
+
+
+
+        <div *ngFor="let movie of trendingMovies" class="col-md-4 ">
+            <div [routerLink]="['/movieDetails' , movie.media_type , movie.id ]" class="movie position-relative my-2">
+                <img [src]="imgPrefix+movie.poster_path" class="img-fluid" alt="">
+                <h3 class="h6 my-2">{{movie.title}}{{movie.name}}</h3>
+
+                <div class="vote">{{movie.vote_average}}</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div class="d-flex justify-content-center my-4 ">
+    <button class="btn btn-dark " >-1</button>
+    <button class="btn btn-dark " >+1</button>
+</div>
